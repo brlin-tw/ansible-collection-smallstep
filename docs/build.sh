@@ -21,7 +21,7 @@ antsibull-docs \
     collection \
     --use-current \
     --dest-dir rst \
-    maxhoesel.smallstep
+    brlin-tw.smallstep
 
 # Build Sphinx site
 cd rst && sphinx-build -M html ./ ../build -c . -W --keep-going

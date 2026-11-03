@@ -13,12 +13,12 @@ with open("../../galaxy.yml", encoding="utf-8") as f:
 version = galaxy["version"]
 release = version
 
-project = 'maxhoesel.smallstep'
+project = 'brlin-tw.smallstep'
 # pylint: disable=redefined-builtin
 copyright = 'Max Hösel and Contributor'
 
-title = 'maxhoesel.smallstep Collection Documentation'
-html_short_title = 'maxhoesel.smallstep Docs'
+title = 'brlin-tw.smallstep Collection Documentation'
+html_short_title = 'brlin-tw.smallstep Docs'
 
 extensions = ['sphinx.ext.autodoc', 'sphinx.ext.intersphinx', 'sphinx_antsibull_ext']
 
