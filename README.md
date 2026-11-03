@@ -59,13 +59,11 @@ Individual roles or modules may have additional dependencies, please check their
 
 ### Versioning Policy and Node Requirements
 
-Each minor version of this collection designed to be compatible with the corresponding minor release of the `step-cli` utility.
-For example, The collection releases with version `0.24.x` are compatible with the `step-cli` utility versions `0.24.x`.
-This coupling is needed as newer minor versions of the `step-cli` tool may introduce breaking changes and affect this collection.
+In contrast of [the upstream project's versioning policy](https://github.com/maxhoesel-ansible/ansible-collection-smallstep#versioning-policy-and-node-requirements), this project strictly follows [the Semantic Versioning standard](https://semver.org/) and does not couple its versioning to the `step-cli` utility.
 
-To install the correct collection version, check your `step-cli` version (`step-cli --version`), then use that value when installing the collection.
+If a incompatibility is introduced by step-ca and the old behavior isn't considered end-of-life, it is considered to be a bug and will be addressed in a subsequent release.
 
-**For step-cli versions `<0.20`:** Use the collection version `>=0.4,<0.5`.
+Users are encouraged to install the latest step-ca version with this collection, and fallback to older versions only if necessary.
 
 ### Install
 
