@@ -12,6 +12,11 @@ and the [CLI tool](https://github.com/smallstep/cli). Possible uses for this col
 - Token or certificate creation from within your Ansible playbooks
 - [Complete configuration of client certificates via ACME, including automatic renewal](roles/step_acme_cert/README.md)
 
+This collection is a fork of [Max Hösel's maxhoesel.smallstep Ansible collection](https://github.com/maxhoesel-ansible/ansible-collection-smallstep), which is published as the upstream's development is staggered at the moment(2026/11/3).  It currently includes the following noteworthy patches:
+
+- [roles: fix step_cli_install var being overwritten by maxhoesel · Pull Request #379 · maxhoesel-ansible/ansible-collection-smallstep](https://github.com/maxhoesel-ansible/ansible-collection-smallstep/pull/379)
+- [Fix the "Remove initial provisioner" task not honouring the step_cli_executable variable (#534) by brlin-tw · Pull Request #536 · maxhoesel-ansible/ansible-collection-smallstep](https://github.com/maxhoesel-ansible/ansible-collection-smallstep/pull/536)
+
 ## Components
 
 ---
