@@ -66,15 +66,15 @@ options:
     type: int
 
 extends_documentation_fragment:
-  - brlin-tw.smallstep.cli_executable
-  - brlin-tw.smallstep.ca_connection
+  - brlin_tw.smallstep.cli_executable
+  - brlin_tw.smallstep.ca_connection
 """
 
 EXAMPLES = r"""
 # See https://smallstep.com/docs/step-cli/reference/ca/renew for more examples
 
 - name: Renew a certificate
-  brlin-tw.smallstep.step_ca_renew:
+  brlin_tw.smallstep.step_ca_renew:
     crt_file: internal.crt
     key_file: internal.key
     ca_url: https://ca.smallstep.com:9000

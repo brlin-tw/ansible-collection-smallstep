@@ -4,7 +4,7 @@
 
 - block:
     - name: Create normal certificate on CA
-      brlin-tw.smallstep.step_ca_certificate:
+      brlin_tw.smallstep.step_ca_certificate:
         name: "127.0.0.1"
         crt_file: "{{ crt_file }}"
         key_file: "{{ key_file }}"
@@ -17,7 +17,7 @@
         not_after: 3h
 
     - name: Certificate is still present (idempotency check)
-      brlin-tw.smallstep.step_ca_certificate:
+      brlin_tw.smallstep.step_ca_certificate:
         name: "127.0.0.1"
         crt_file: "{{ crt_file }}"
         key_file: "{{ key_file }}"
@@ -35,7 +35,7 @@
         that: not cert_idempotency.changed
 
     - name: Certificate stays the same if parameters are omitted
-      brlin-tw.smallstep.step_ca_certificate:
+      brlin_tw.smallstep.step_ca_certificate:
         name: "127.0.0.1"
         crt_file: "{{ crt_file }}"
         key_file: "{{ key_file }}"
@@ -48,7 +48,7 @@
         that: not cert_missing_parameters_idempotency.changed
 
     - name: Certificate gets reissued on force
-      brlin-tw.smallstep.step_ca_certificate:
+      brlin_tw.smallstep.step_ca_certificate:
         force: true
         name: "127.0.0.1"
         crt_file: "{{ crt_file }}"
@@ -67,7 +67,7 @@
         that: cert_force.changed
 
     - name: Certificate gets reissued on SAN change
-      brlin-tw.smallstep.step_ca_certificate:
+      brlin_tw.smallstep.step_ca_certificate:
         name: "127.0.0.1"
         crt_file: "{{ crt_file }}"
         key_file: "{{ key_file }}"
@@ -86,7 +86,7 @@
         that: cert_san.changed
 
     - name: Certificate gets reissued on size change
-      brlin-tw.smallstep.step_ca_certificate:
+      brlin_tw.smallstep.step_ca_certificate:
         name: "127.0.0.1"
         crt_file: "{{ crt_file }}"
         key_file: "{{ key_file }}"
@@ -105,7 +105,7 @@
         that: cert_size.changed
 
     - name: Certificate gets reissued on kty change
-      brlin-tw.smallstep.step_ca_certificate:
+      brlin_tw.smallstep.step_ca_certificate:
         name: "127.0.0.1"
         crt_file: "{{ crt_file }}"
         key_file: "{{ key_file }}"
@@ -123,7 +123,7 @@
         that: cert_kty.changed
 
     - name: Certificate gets reissued on crv change
-      brlin-tw.smallstep.step_ca_certificate:
+      brlin_tw.smallstep.step_ca_certificate:
         name: "127.0.0.1"
         crt_file: "{{ crt_file }}"
         key_file: "{{ key_file }}"
@@ -142,7 +142,7 @@
         that: cert_crv.changed
 
     - name: Revoke certificate
-      brlin-tw.smallstep.step_ca_certificate:
+      brlin_tw.smallstep.step_ca_certificate:
         crt_file: "{{ crt_file }}"
         key_file: "{{ key_file }}"
         state: revoked
@@ -152,7 +152,7 @@
         that: revoked.changed
 
     - name: Revoke certificate again
-      brlin-tw.smallstep.step_ca_certificate:
+      brlin_tw.smallstep.step_ca_certificate:
         crt_file: "{{ crt_file }}"
         key_file: "{{ key_file }}"
         state: revoked
@@ -162,7 +162,7 @@
         that: not revoked_again.changed
 
     - name: Delete certificate
-      brlin-tw.smallstep.step_ca_certificate:
+      brlin_tw.smallstep.step_ca_certificate:
         crt_file: "{{ crt_file }}"
         key_file: "{{ key_file }}"
         revoke_on_delete: true # already the default
@@ -173,7 +173,7 @@
         that: revoked.changed
 
     - name: Delete certificate again
-      brlin-tw.smallstep.step_ca_certificate:
+      brlin_tw.smallstep.step_ca_certificate:
         crt_file: "{{ crt_file }}"
         key_file: "{{ key_file }}"
         revoke_on_delete: true # already the default

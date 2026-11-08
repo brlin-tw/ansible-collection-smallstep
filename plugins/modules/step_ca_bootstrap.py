@@ -36,17 +36,17 @@ options:
     description: Terminal OAuth redirect url.
     type: str
 
-extends_documentation_fragment: brlin-tw.smallstep.cli_executable
+extends_documentation_fragment: brlin_tw.smallstep.cli_executable
 """
 
 EXAMPLES = r"""
 - name: Bootstrap using the CA url and a fingerprint
-  brlin-tw.smallstep.step_ca_bootstrap:
+  brlin_tw.smallstep.step_ca_bootstrap:
     ca_url: https://ca.example.org
     fingerprint: d9d0978692f1c7cc791f5c343ce98771900721405e834cd27b9502cc719f5097
 
 - name: Bootstrap and install the root certificate
-  brlin-tw.smallstep.step_ca_bootstrap:
+  brlin_tw.smallstep.step_ca_bootstrap:
     ca_url: https://ca.example.org
     fingerprint: d9d0978692f1c7cc791f5c343ce98771900721405e834cd27b9502cc719f5097
     install: yes

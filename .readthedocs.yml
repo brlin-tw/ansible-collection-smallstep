@@ -18,7 +18,7 @@ build:
         && ansible-galaxy collection install *.tar.gz --force
         && cd docs
         && mkdir temp-rst
-        && antsibull-docs --config-file antsibull-docs.cfg collection --use-current --dest-dir temp-rst brlin-tw.smallstep
+        && antsibull-docs --config-file antsibull-docs.cfg collection --use-current --dest-dir temp-rst brlin_tw.smallstep
       - cd docs && rsync -cprv --delete-after temp-rst/collections/ rst/collections/
 
 sphinx:

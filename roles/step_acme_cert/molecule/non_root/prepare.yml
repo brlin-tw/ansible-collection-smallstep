@@ -48,7 +48,7 @@
 
     - name: Bootstrap nginx host
       include_role:
-        name: brlin-tw.smallstep.step_bootstrap_host
+        name: brlin_tw.smallstep.step_bootstrap_host
       vars:
         step_bootstrap_fingerprint: "{{ _ca_fingerprint.stdout }}"
         step_bootstrap_users:

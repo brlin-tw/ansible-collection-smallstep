@@ -104,7 +104,7 @@
           - "{{ step_ca_ssh | ternary('ssh_user_ca_key', '') }}"
 
     - name: Remove initial provisioner
-      brlin-tw.smallstep.step_ca_provisioner:
+      brlin_tw.smallstep.step_ca_provisioner:
         name: "{{ step_ca_tmp_provisioner }}"
         type: JWK
         state: absent

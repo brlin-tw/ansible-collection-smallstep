@@ -1,4 +1,4 @@
-# brlin-tw.smallstep - Ansible Collection for Smallstep CA/CLI
+# brlin_tw.smallstep - Ansible Collection for Smallstep CA/CLI
 
 ![Release](https://img.shields.io/github/v/release/brlin-tw/ansible-collection-smallstep?style=flat-square)
 ![Build Status](https://img.shields.io/circleci/build/github/brlin-tw/ansible-collection-smallstep/main?style=flat-square)
@@ -69,7 +69,7 @@ Users are encouraged to install the latest step-ca version with this collection,
 
 Via ansible-galaxy (recommended):
 
-`ansible-galaxy collection install brlin-tw.smallstep>=your-step-cli-version,<next-major-version`
+`ansible-galaxy collection install brlin_tw.smallstep>=your-step-cli-version,<next-major-version`
 
 Alternatively, you can download a collection archive from a [previous release](hhttps://github.com/brlin-tw/ansible-collection-smallstep/releases).
 
@@ -106,19 +106,19 @@ Below are some examples to showcase the different options. These examples assume
 - hosts: ca
   tasks:
     - name: Run a module in online mode by specifying the CA URL and CA cert
-      brlin-tw.smallstep.step_ca_certificate:
+      brlin_tw.smallstep.step_ca_certificate:
         root: /etc/ssl/myca.crt
         ca_url: https://my-ca.localdomain
         #params go here
 
     # This will only work if you ran step_bootstrap_host on this host first!
     - name: Run a module as root to use the CA configured during bootstrapping
-      brlin-tw.smallstep.step_ca_certificate:
+      brlin_tw.smallstep.step_ca_certificate:
         #params go here
       become: yes
 
     - name: Run a module in offline mode
-      brlin-tw.smallstep.step_ca_certificate:
+      brlin_tw.smallstep.step_ca_certificate:
         offline: yes
         # params go here
       become: yes
@@ -127,7 +127,7 @@ Below are some examples to showcase the different options. These examples assume
       become_user: step-ca
 
     - name: Run a offline-only module and manually supply the ca_config
-      brlin-tw.smallstep.step_ca_provisioner:
+      brlin_tw.smallstep.step_ca_provisioner:
         ca_config: /etc/step-ca/config/ca.json
         #params go here
       become: yes
@@ -138,7 +138,7 @@ All modules in this collection respect the `$STEPPATH` environment variable used
 
 ```yaml
   - name: Use the custom $STEPPATH in a module
-    brlin-tw.smallstep.step_ca_certificate:
+    brlin_tw.smallstep.step_ca_certificate:
       # params go here
     environment:
       STEPPATH: /etc/step-cli
@@ -188,7 +188,7 @@ See the `step_ca` documentation for more details on how private keys are handled
     # There are a lot of configuration options, see the step_ca README for details
     - name: Install step-ca
       include_role:
-        name: brlin-tw.smallstep.step_ca
+        name: brlin_tw.smallstep.step_ca
       vars:
         step_ca_name: Foobar Internal CA
         step_ca_root_password: "incredibly secret password"
@@ -219,7 +219,7 @@ To actually initialize the clients, you can use [`step_bootstrap_host`](roles/st
   tasks:
     - name: Bootstrap the hosts to trust the CA
       include_role:
-        name: brlin-tw.smallstep.step_bootstrap_host
+        name: brlin_tw.smallstep.step_bootstrap_host
       vars:
         # These values point the hosts to your newly created CA
         step_bootstrap_ca_url: https://my-ca.localdomain

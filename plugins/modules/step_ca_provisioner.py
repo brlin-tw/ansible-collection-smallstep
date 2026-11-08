@@ -357,8 +357,8 @@ options:
       - x5c_root_file
 
 extends_documentation_fragment:
-  - brlin-tw.smallstep.cli_executable
-  - brlin-tw.smallstep.ca_admin
+  - brlin_tw.smallstep.cli_executable
+  - brlin_tw.smallstep.ca_admin
 """
 
 EXAMPLES = r"""
@@ -367,14 +367,14 @@ EXAMPLES = r"""
 # parameters with ca_config
 
 - name: Create a JWK provisioner with newly generated keys and a template for x509 certificates
-  brlin-tw.smallstep.step_ca_provisioner:
+  brlin_tw.smallstep.step_ca_provisioner:
     name: cicd
     type: JWK
     jwk_create: yes
     x509_template: ./templates/example.tpl
 
 - name: Create a JWK provisioner with duration claims
-  brlin-tw.smallstep.step_ca_provisioner:
+  brlin_tw.smallstep.step_ca_provisioner:
     name: cicd
     type: JWK, cli
     create: yes
@@ -383,14 +383,14 @@ EXAMPLES = r"""
     x509_max_dur: 24h
 
 - name: Create a JWK provisioner with existing keys
-  brlin-tw.smallstep.step_ca_provisioner:
+  brlin_tw.smallstep.step_ca_provisioner:
     name: jane@doe.com
     type: JWK
     public_key: jwk.pub
     private_key: jwk.priv
 
 - name: Create an OIDC provisioner
-  brlin-tw.smallstep.step_ca_provisioner:
+  brlin_tw.smallstep.step_ca_provisioner:
     name: Google
     type: OIDC
     client_id: 1087160488420-8qt7bavg3qesdhs6it824mhnfgcfe8il.apps.googleusercontent.com
@@ -398,39 +398,39 @@ EXAMPLES = r"""
     configuration_endpoint: https://accounts.google.com/.well-known/openid-configuration
 
 - name: Create an X5C provisioner
-  brlin-tw.smallstep.step_ca_provisioner:
+  brlin_tw.smallstep.step_ca_provisioner:
     name: x5c
     type: X5C
     x5c_root: x5c_ca.crt
 
 - name: Create an ACME provisioner, forcing a CN and requiring EAB
-  brlin-tw.smallstep.step_ca_provisioner:
+  brlin_tw.smallstep.step_ca_provisioner:
     name: acme
     type: ACME
     force_cn: yes
     require_eab: yes
 
 - name: Crate an K8SSA provisioner
-  brlin-tw.smallstep.step_ca_provisioner:
+  brlin_tw.smallstep.step_ca_provisioner:
     name: kube
     type: K8SSA
     ssh: true
     public_key: key.pub
 
 - name: Create an SSHPOP provisioner
-  brlin-tw.smallstep.step_ca_provisioner:
+  brlin_tw.smallstep.step_ca_provisioner:
     name: sshpop
     type: SSHPOP
 
 - name: Create a SCEP provisioner
-  brlin-tw.smallstep.step_ca_provisioner:
+  brlin_tw.smallstep.step_ca_provisioner:
     name: scep_provisioner
     type: SCEP
     scep_challenge: secret
     scep_encryption_algorithm_identifier: 2
 
 - name: Create a complexAzure provisioner
-  brlin-tw.smallstep.step_ca_provisioner:
+  brlin_tw.smallstep.step_ca_provisioner:
     name: Azure
     type: Azure
     azure_tenant: bc9043e2-b645-4c1c-a87a-78f8644bfe57

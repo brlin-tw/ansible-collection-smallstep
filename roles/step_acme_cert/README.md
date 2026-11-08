@@ -1,4 +1,4 @@
-# brlin-tw.smallstep.step_acme_cert
+# brlin_tw.smallstep.step_acme_cert
 
 Get a certificate from a CA with ACME and setup automatic renewal using `step-cli renew`.
 
@@ -117,7 +117,7 @@ to make use of ACME certs.
   become: yes
   tasks:
     - name: Add an ACME provisioner to the CA
-      brlin-tw.smallstep.step_ca_provisioner:
+      brlin_tw.smallstep.step_ca_provisioner:
         name: ACME
         type: ACME
       become_user: step-ca
@@ -133,7 +133,7 @@ to make use of ACME certs.
   tasks:
     # Bootstrap the host to trust the CA
     - include_role:
-        name: brlin-tw.smallstep.step_bootstrap_host
+        name: brlin_tw.smallstep.step_bootstrap_host
       vars:
         step_bootstrap_ca_url: https://myca.localdomain
         step_bootstrap_fingerprint: your CAs fingerprint
@@ -142,7 +142,7 @@ to make use of ACME certs.
     # See the step_acme_cert README for more options
     - name: Configure an ACME cert + renewal
       include_role:
-        name: brlin-tw.smallstep.step_acme_cert
+        name: brlin_tw.smallstep.step_acme_cert
       vars:
         step_acme_cert_ca_provisioner: ACME
 

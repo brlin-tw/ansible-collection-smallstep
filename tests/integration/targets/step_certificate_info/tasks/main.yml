@@ -5,7 +5,7 @@
         dest: /tmp/cert-info-sample.crt
 
     - name: Read certificate info (text)
-      brlin-tw.smallstep.step_certificate_info:
+      brlin_tw.smallstep.step_certificate_info:
         path: /tmp/cert-info-sample.crt
         format: text
       register: text_return
@@ -17,7 +17,7 @@
           - '"certificate signed by unknown authority" in text_return.validity_fail_reason'
 
     - name: Read certificate info (text-short)
-      brlin-tw.smallstep.step_certificate_info:
+      brlin_tw.smallstep.step_certificate_info:
         path: /tmp/cert-info-sample.crt
         format: text-short
       register: text_short_return
@@ -29,7 +29,7 @@
           - '"certificate signed by unknown authority" in text_short_return.validity_fail_reason'
 
     - name: Read certificate info (pem)
-      brlin-tw.smallstep.step_certificate_info:
+      brlin_tw.smallstep.step_certificate_info:
         path: /tmp/cert-info-sample.crt
         format: pem
       register: pem_return
@@ -43,7 +43,7 @@
         cert_data: "{{ lookup('file', 'files/ca.crt') | trim }}"
 
     - name: Read certificate info (json)
-      brlin-tw.smallstep.step_certificate_info:
+      brlin_tw.smallstep.step_certificate_info:
         path: /tmp/cert-info-sample.crt
       register: json_return
     - name: Ensure certificate is returned

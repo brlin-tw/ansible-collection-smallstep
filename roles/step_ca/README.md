@@ -1,4 +1,4 @@
-# brlin-tw.smallstep.step_ca
+# brlin_tw.smallstep.step_ca
 
 Install and initialize a Smallstep certificates server (`step-ca`).
 
@@ -207,7 +207,7 @@ These variables need to be set as a group
 # such as ansible-vault or via vars-prompt
 - hosts: all
   roles:
-    - role: brlin-tw.smallstep.step_ca
+    - role: brlin_tw.smallstep.step_ca
       become: yes
       vars:
         step_ca_name: Foo Bar Private CA

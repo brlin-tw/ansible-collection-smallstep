@@ -1,6 +1,6 @@
 .. _docsite_root_index:
 
-Welcome to the brlin-tw.smallstep Collection Documentation!
+Welcome to the brlin_tw.smallstep Collection Documentation!
 ============================================================
 
 See the below indices for a list of all the modules and roles included in this collection.

@@ -1,5 +1,5 @@
 - name: Create certificate
-  brlin-tw.smallstep.step_ca_certificate:
+  brlin_tw.smallstep.step_ca_certificate:
     name: "127.0.0.1"
     crt_file: /tmp/generated_certificate
     key_file: /tmp/generated_key
@@ -9,7 +9,7 @@
     not_after: 1h
 
 - name: Try to renew early
-  brlin-tw.smallstep.step_ca_renew:
+  brlin_tw.smallstep.step_ca_renew:
     crt_file: /tmp/generated_certificate
     key_file: /tmp/generated_key
     password_file: "{{ ca_provisioner_password_file }}"
@@ -22,7 +22,7 @@
     that: not early_renewal.changed
 
 - name: Force renewal of the cert
-  brlin-tw.smallstep.step_ca_renew:
+  brlin_tw.smallstep.step_ca_renew:
     crt_file: /tmp/generated_certificate
     key_file: /tmp/generated_key
     password: "{{ ca_provisioner_password }}"

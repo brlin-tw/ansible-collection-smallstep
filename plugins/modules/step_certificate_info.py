@@ -63,14 +63,14 @@ options:
     default: false
 
 extends_documentation_fragment:
-  - brlin-tw.smallstep.cli_executable
+  - brlin_tw.smallstep.cli_executable
 """
 
 EXAMPLES = r"""
 # See https://smallstep.com/docs/step-cli/reference/certificate/inspect for more examples
 
 - name: Inspect a local certificate bundle
-  brlin-tw.smallstep.step_certificate_info:
+  brlin_tw.smallstep.step_certificate_info:
     path: /path/to/certificate.crt
     bundle: true
 """

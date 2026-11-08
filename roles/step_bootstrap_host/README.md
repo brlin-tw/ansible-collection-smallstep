@@ -1,4 +1,4 @@
-# brlin-tw.smallstep.step_bootstrap_host
+# brlin_tw.smallstep.step_bootstrap_host
 
 Install `step-cli` on a host and configure it to trust your CA.
 This is intended as a one-stop role that sets up all the components neccessary for using `step-cli` on a given host.
@@ -103,7 +103,7 @@ See the [step-cli role docs](/roles/step_cli/README.md) for more details on the 
 - name: Configure the host to trust the CA and setup the step service user
   hosts: all
   roles:
-    - role: brlin-tw.smallstep.step_bootstrap_host
+    - role: brlin_tw.smallstep.step_bootstrap_host
       vars:
         step_bootstrap_ca_url: https://myca.localdomain
         step_bootstrap_fingerprint: 6e1419b2a5086e961dc503cb2994f479968ed10b73c973705ed8a2d12a337b99
