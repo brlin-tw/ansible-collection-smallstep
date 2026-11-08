@@ -26,7 +26,7 @@ description: Install, configure and use the Smallstep CA server and CLI tool
 issues: https://github.com/brlin-tw/ansible-collection-smallstep/issues
 license_file: LICENSE
 name: smallstep
-namespace: brlin-tw
+namespace: brlin_tw
 readme: README.md
 repository: https://github.com/brlin-tw/ansible-collection-smallstep
 tags:
