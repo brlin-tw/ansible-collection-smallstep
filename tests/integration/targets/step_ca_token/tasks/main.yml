@@ -1,5 +1,5 @@
 - name: Test token creation
-  maxhoesel.smallstep.step_ca_token:
+  brlin-tw.smallstep.step_ca_token:
     name: "127.0.0.1"
     provisioner: "{{ ca_provisioner }}"
     provisioner_password_file: "{{ ca_provisioner_password_file }}"
@@ -11,7 +11,7 @@
     that: generated_token.token
 
 - name: Test token creation with direct provisioner password
-  maxhoesel.smallstep.step_ca_token:
+  brlin-tw.smallstep.step_ca_token:
     name: "127.0.0.1"
     provisioner: "{{ ca_provisioner }}"
     provisioner_password: "{{ ca_provisioner_password }}"

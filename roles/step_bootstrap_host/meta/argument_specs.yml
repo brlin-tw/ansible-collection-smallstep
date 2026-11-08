@@ -6,7 +6,7 @@ argument_specs:
       - |
         This role will perform the following steps:
 
-        1. Install C(step-cli) if required (using the R(step_cli role,ansible_collections.maxhoesel.smallstep.step_cli_role))
+        1. Install C(step-cli) if required (using the R(step_cli role,ansible_collections.brlin-tw.smallstep.step_cli_role))
         2. Install the CA root cert into the system trust store
         3. Configure the root user to automatically connect to your CA when running C(step-cli)
       - |

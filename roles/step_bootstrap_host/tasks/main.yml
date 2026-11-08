@@ -1,7 +1,7 @@
 ---
 - name: Install step_cli # always run this (if desired), to ensure our cli version is up-to-date
   include_role:
-    name: maxhoesel.smallstep.step_cli
+    name: brlin-tw.smallstep.step_cli
   when: step_cli_install
 
 # File permissions are handled by step itself, only make sure that the directory exists
@@ -15,7 +15,7 @@
   when: item.steppath | d("") | length > 0
 
 - name: step-cli is bootstrapped
-  maxhoesel.smallstep.step_ca_bootstrap:
+  brlin-tw.smallstep.step_ca_bootstrap:
     ca_url: "{{ step_bootstrap_ca_url }}"
     fingerprint: "{{ step_bootstrap_fingerprint }}"
     step_cli_executable: "{{ step_cli_executable }}"

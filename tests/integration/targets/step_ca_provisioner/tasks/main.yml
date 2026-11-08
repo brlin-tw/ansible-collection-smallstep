@@ -22,7 +22,7 @@
     # so many of the online provisioners do not actually work. Good enough to test our module
     # functionality still.
     - name: Create test provisioners
-      maxhoesel.smallstep.step_ca_provisioner: "{{ item | combine({'step_cli_executable': cli_binary}) }}"
+      brlin-tw.smallstep.step_ca_provisioner: "{{ item | combine({'step_cli_executable': cli_binary}) }}"
       loop:
         - name: tests-JWK
           type: JWK
@@ -61,7 +61,7 @@
           k8s_pem_keys_file: "/tmp/tests_crt"
 
     - name: Test creation idempotency
-      maxhoesel.smallstep.step_ca_provisioner: "{{ item | combine({'step_cli_executable': cli_binary })}}"
+      brlin-tw.smallstep.step_ca_provisioner: "{{ item | combine({'step_cli_executable': cli_binary })}}"
       loop:
         - name: tests-JWK
           type: JWK
@@ -101,7 +101,7 @@
         that: not second_run.changed
 
     - name: Test updating provisioners
-      maxhoesel.smallstep.step_ca_provisioner:
+      brlin-tw.smallstep.step_ca_provisioner:
         name: tests-OIDC
         type: OIDC
         oidc_client_id: 1087160488420-8qt7bavg3qesdhs6it824mhnfgcfe8il.apps.googleusercontent.com
@@ -121,7 +121,7 @@
     # Remove the online provisioners before restarting as they may imapct server
     # functionality
     - name: Remove online provisioners
-      maxhoesel.smallstep.step_ca_provisioner:
+      brlin-tw.smallstep.step_ca_provisioner:
         name: "{{ item.0 }}"
         type: "{{ item.1 }}"
         state: absent
@@ -143,7 +143,7 @@
       changed_when: no
 
     - name: Remove test provisioners
-      maxhoesel.smallstep.step_ca_provisioner:
+      brlin-tw.smallstep.step_ca_provisioner:
         name: "{{ item }}"
         state: absent
         step_cli_executable: "{{ cli_binary }}"

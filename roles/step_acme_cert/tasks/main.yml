@@ -9,7 +9,7 @@
     step_acme_cert_certfile_full: "{{ step_acme_cert_certfile_defaults | combine(step_acme_cert_certfile) }}"
 
 - name: Get certificate from CA
-  maxhoesel.smallstep.step_ca_certificate:
+  brlin-tw.smallstep.step_ca_certificate:
     provisioner: "{{ step_acme_cert_ca_provisioner }}"
     contact: "{{ step_acme_cert_contact }}"
     crt_file: "{{ step_acme_cert_certfile_full.path }}"

@@ -9,4 +9,4 @@
 - name: Verify that `step-cli` is installed
   assert:
     that: _step_cli_install.rc == 0
-    fail_msg: "Could not find step-cli at path '{{ step_cli_executable }}'. Please install step-cli via maxhoesel.smallstep.step_cli or step_bootstrap_host"
+    fail_msg: "Could not find step-cli at path '{{ step_cli_executable }}'. Please install step-cli via brlin-tw.smallstep.step_cli or step_bootstrap_host"

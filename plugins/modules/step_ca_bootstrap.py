@@ -1,12 +1,13 @@
 #!/usr/bin/python
 
 # Copyright: (c) 2021, Max Hösel <ansible@maxhoesel.de>
+# Copyright 2026 林博仁(Buo-ren Lin) <buo.ren.lin@gmail.com>
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 ---
 module: step_ca_bootstrap
-author: Max Hösel (@maxhoesel)
+author: Buo-ren Lin (@brlin-tw), Max Hösel (@maxhoesel)
 short_description: Initialize C(step-cli) to trust a step-ca server
 version_added: '0.3.0'
 description: >
@@ -35,17 +36,17 @@ options:
     description: Terminal OAuth redirect url.
     type: str
 
-extends_documentation_fragment: maxhoesel.smallstep.cli_executable
+extends_documentation_fragment: brlin-tw.smallstep.cli_executable
 """
 
 EXAMPLES = r"""
 - name: Bootstrap using the CA url and a fingerprint
-  maxhoesel.smallstep.step_ca_bootstrap:
+  brlin-tw.smallstep.step_ca_bootstrap:
     ca_url: https://ca.example.org
     fingerprint: d9d0978692f1c7cc791f5c343ce98771900721405e834cd27b9502cc719f5097
 
 - name: Bootstrap and install the root certificate
-  maxhoesel.smallstep.step_ca_bootstrap:
+  brlin-tw.smallstep.step_ca_bootstrap:
     ca_url: https://ca.example.org
     fingerprint: d9d0978692f1c7cc791f5c343ce98771900721405e834cd27b9502cc719f5097
     install: yes

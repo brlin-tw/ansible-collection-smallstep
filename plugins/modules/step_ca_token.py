@@ -126,13 +126,13 @@ options:
     type: path
 
 extends_documentation_fragment:
-  - maxhoesel.smallstep.cli_executable
-  - maxhoesel.smallstep.ca_connection
+  - brlin-tw.smallstep.cli_executable
+  - brlin-tw.smallstep.ca_connection
 """
 
 EXAMPLES = r"""
 - name: Generate a token on the CA, using the values from $STEPPATH
-  maxhoesel.smallstep.step_ca_token:
+  brlin-tw.smallstep.step_ca_token:
     name: foo.bar
 """
 

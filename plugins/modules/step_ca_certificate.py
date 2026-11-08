@@ -217,14 +217,14 @@ options:
     type: path
 
 extends_documentation_fragment:
-  - maxhoesel.smallstep.cli_executable
-  - maxhoesel.smallstep.ca_connection
+  - brlin-tw.smallstep.cli_executable
+  - brlin-tw.smallstep.ca_connection
 """
 
 EXAMPLES = r"""
 # See https://smallstep.com/docs/step-cli/reference/ca/certificate for more examples
 - name: Ensure valid certificate exists
-  maxhoesel.smallstep.step_ca_certificate:
+  brlin-tw.smallstep.step_ca_certificate:
     name: "{{ ansible_fqdn }}"
     crt_file: "/etc/ssl/my.cert"
     key_file: "/etc/ssl/my.key"
@@ -237,7 +237,7 @@ EXAMPLES = r"""
     not_after: 24h
 
 - name: Use custom root to verify existing cert
-  maxhoesel.smallstep.step_ca_certificate:
+  brlin-tw.smallstep.step_ca_certificate:
     name: "{{ ansible_fqdn }}"
     crt_file: "/etc/ssl/my.cert"
     key_file: "/etc/ssl/my.key"
@@ -254,14 +254,14 @@ EXAMPLES = r"""
     verify_roots: "/path/to/custom/root_ca.crt"
 
 - name: Ensure cert is revoked
-  maxhoesel.smallstep.step_ca_certificate:
+  brlin-tw.smallstep.step_ca_certificate:
     name: "{{ ansible_fqdn }}"
     crt_file: "/etc/ssl/my.cert"
     key_file: "/etc/ssl/my.key"
     state: revoked
 
 - name: Ensure cert is absent (and revoke if first if it isn't)
-  maxhoesel.smallstep.step_ca_certificate:
+  brlin-tw.smallstep.step_ca_certificate:
     name: "{{ ansible_fqdn }}"
     crt_file: "/etc/ssl/my.cert"
     key_file: "/etc/ssl/my.key"

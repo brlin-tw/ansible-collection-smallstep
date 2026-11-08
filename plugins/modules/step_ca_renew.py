@@ -66,15 +66,15 @@ options:
     type: int
 
 extends_documentation_fragment:
-  - maxhoesel.smallstep.cli_executable
-  - maxhoesel.smallstep.ca_connection
+  - brlin-tw.smallstep.cli_executable
+  - brlin-tw.smallstep.ca_connection
 """
 
 EXAMPLES = r"""
 # See https://smallstep.com/docs/step-cli/reference/ca/renew for more examples
 
 - name: Renew a certificate
-  maxhoesel.smallstep.step_ca_renew:
+  brlin-tw.smallstep.step_ca_renew:
     crt_file: internal.crt
     key_file: internal.key
     ca_url: https://ca.smallstep.com:9000

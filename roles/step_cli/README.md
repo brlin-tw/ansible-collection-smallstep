@@ -1,4 +1,4 @@
-# maxhoesel.smallstep.step_cli
+# brlin-tw.smallstep.step_cli
 
 Install the `step-cli`  tool on a host.
 
@@ -46,13 +46,13 @@ This role is used by `step_bootstrap_host` and `step_ca`, but can also be used s
 # Install step-cli into the default path
 - hosts: all
   roles:
-  - role: maxhoesel.smallstep.step_cli
+  - role: brlin-tw.smallstep.step_cli
     become: yes
 
 # Install a specific step-cli version to a custom path
 - hosts: all
   roles:
-  - role: maxhoesel.smallstep.step_cli
+  - role: brlin-tw.smallstep.step_cli
     become: yes
     vars:
       step_cli_version: "0.21.0"
